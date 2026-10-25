@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes - Student Life Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 500: '#3b82f6', 600: '#2563eb' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="dashboard.html" class="font-extrabold text-lg text-brand-600 dark:text-blue-400">← Dashboard</a>
+            <h1 class="font-bold text-base" data-en="Notes & Study Material" data-hi="नोट्स और स्टडी मटेरियल">Notes & Study Material</h1>
+            <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700"><i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i></button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <select class="p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 font-medium text-sm">
+                <option>Polytechnic Diploma</option>
+                <option>ITI Trade</option>
+            </select>
+            <select class="p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 font-medium text-sm">
+                <option>Mechanical Engineering</option>
+                <option>Electrical Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Computer Science</option>
+            </select>
+            <select class="p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 font-medium text-sm">
+                <option>3rd Semester</option>
+                <option>1st Semester</option>
+                <option>2nd Semester</option>
+                <option>4th Semester</option>
+            </select>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="text-xs bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 px-2.5 py-1 rounded-full font-semibold">Applied Mechanics</span>
+                    <h3 class="font-bold text-lg mt-3 mb-2">Chapter 1: Forces & Moments PDF</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Complete Hindi & English bilingual notes with important derivation questions.</p>
+                </div>
+                <button onclick="alert('Downloading PDF & rewarding +5 coins!')" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition">
+                    📥 Download PDF (+5 Coins)
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="text-xs bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300 px-2.5 py-1 rounded-full font-semibold">Engineering Drawing</span>
+                    <h3 class="font-bold text-lg mt-3 mb-2">Previous Year Paper 2024</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Official solved question paper for board examination preparation.</p>
+                </div>
+                <button onclick="alert('Downloading PDF & rewarding +5 coins!')" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition">
+                    📥 Download PDF (+5 Coins)
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

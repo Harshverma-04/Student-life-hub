@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Wallet - Student Life Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 500: '#3b82f6', 600: '#2563eb' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="dashboard.html" class="font-extrabold text-lg text-brand-600 dark:text-blue-400">← Dashboard</a>
+            <h1 class="font-bold text-base" data-en="Coin Wallet & Rewards" data-hi="कॉइन वॉलेट और रिवॉर्ड्स">Coin Wallet & Rewards</h1>
+            <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700"><i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i></button>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl p-8 text-white shadow-xl text-center mb-8">
+            <p class="text-amber-100 font-medium uppercase tracking-wider text-xs">Total Coin Balance</p>
+            <h1 class="text-5xl font-black mt-2">🪙 145</h1>
+            <p class="text-sm mt-3 text-amber-100">Virtual study reward points (Not real cash)</p>
+            <button onclick="alert('Daily check-in successful! +1 Coin added.')" class="mt-6 px-6 py-3 bg-white text-orange-600 font-bold rounded-xl shadow-md hover:bg-orange-50 transition">
+                ✨ Claim Daily Check-In (+1 Coin)
+            </button>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h2 class="font-bold text-lg mb-4" data-en="Transaction History" data-hi="लेन-देन का इतिहास">Transaction History</h2>
+            <div class="space-y-3 text-sm">
+                <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                    <div>
+                        <p class="font-semibold">Completed Video Lecture</p>
+                        <span class="text-xs text-gray-400">Today, 10:30 AM</span>
+                    </div>
+                    <span class="font-bold text-green-600">+10 Coins</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-gray-700">
+                    <div>
+                        <p class="font-semibold">Downloaded Study PDF</p>
+                        <span class="text-xs text-gray-400">Yesterday, 4:15 PM</span>
+                    </div>
+                    <span class="font-bold text-green-600">+5 Coins</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

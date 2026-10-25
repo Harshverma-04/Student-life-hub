@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Tools - Student Life Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 500: '#3b82f6', 600: '#2563eb' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="dashboard.html" class="font-extrabold text-lg text-brand-600 dark:text-blue-400">← Dashboard</a>
+            <h1 class="font-bold text-base" data-en="Student Tools & Calculators" data-hi="स्टूडेंट टूल्स और कैलकुलेटर">Student Tools & Calculators</h1>
+            <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700"><i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i></button>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-8">
+        <!-- CGPA Calculator -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h2 class="font-bold text-lg mb-4">🎓 CGPA & Percentage Calculator</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="number" id="cgpaInput" placeholder="Enter SGPA / CGPA (e.g. 7.5)" class="p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 text-sm">
+                <button onclick="calculatePercentage()" class="py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition">Calculate Percentage</button>
+            </div>
+            <p id="cgpaResult" class="mt-4 font-bold text-brand-600 dark:text-blue-400"></p>
+        </div>
+
+        <!-- Attendance Calculator -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h2 class="font-bold text-lg mb-4">📅 College Attendance Percentage Calculator</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <input type="number" id="totalClasses" placeholder="Total Classes Held" class="p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 text-sm">
+                <input type="number" id="attendedClasses" placeholder="Classes Attended" class="p-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 text-sm">
+            </div>
+            <button onclick="calculateAttendance()" class="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-sm transition">Calculate Attendance %</button>
+            <p id="attendanceResult" class="mt-4 font-bold text-green-600"></p>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        function calculatePercentage() {
+            let val = parseFloat(document.getElementById('cgpaInput').value);
+            if(isNaN(val)) { alert('Please enter valid CGPA'); return; }
+            let percentage = (val - 0.75) * 10;
+            document.getElementById('cgpaResult').innerText = `Estimated Percentage: ${percentage.toFixed(2)}%`;
+        }
+        function calculateAttendance() {
+            let total = parseFloat(document.getElementById('totalClasses').value);
+            let attended = parseFloat(document.getElementById('attendedClasses').value);
+            if(isNaN(total) || isNaN(attended) || total <= 0) { alert('Please enter valid class numbers'); return; }
+            let pct = (attended / total) * 100;
+            document.getElementById('attendanceResult').innerText = `Attendance: ${pct.toFixed(2)}% ${pct >= 75 ? '✅ (Safe above 75%)' : '⚠️ (Below 75% minimum)'}`;
+        }
+    </script>
+</body>
+</html>

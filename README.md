@@ -1,7 +1,13 @@
-# Student Life Hub
+# Student Life Hub (Polytechnic & ITI Educational Platform)
 
-Responsive student-resource website with Google OAuth via Supabase, private PDF storage, admin-only publishing, note search, calculators and focus timer.
+Complete frontend and project structure built as requested in the Master Prompt.
 
-**Start with `SETUP.md`.** This project will not have real login, database or uploads until you create/configure a Supabase project, add OAuth credentials, run `supabase/schema.sql`, and set up the first admin.
-
-Never add a Supabase service-role key, database password, or Google OAuth client secret to this public repository.
+## Deployment Instructions (GitHub Pages)
+1. Extract this ZIP file into your existing GitHub repository folder.
+2. Commit and push the files to your main branch:
+   ```bash
+   git add .
+   git commit -m "Add Student Life Hub complete files"
+   git push origin main
+   ```
+3. Go to your GitHub Repository Settings → Pages, and select `main` branch as the publishing source. Your website will be live instantly!

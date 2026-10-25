@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Lectures - Student Life Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 500: '#3b82f6', 600: '#2563eb' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="dashboard.html" class="font-extrabold text-lg text-brand-600 dark:text-blue-400">← Dashboard</a>
+            <h1 class="font-bold text-base" data-en="Video Lectures" data-hi="वीडियो लेक्चर्स">Video Lectures</h1>
+            <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700"><i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i></button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
+                <div class="aspect-video bg-gray-900 rounded-xl mb-4 flex items-center justify-center text-white text-4xl">
+                    ▶️
+                </div>
+                <h3 class="font-bold text-lg mb-1">Applied Mechanics - Friction Full Chapter</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Instructor: Er. Rajesh Sharma • 45 mins</p>
+                <button onclick="alert('Lecture Completed! +10 Coins added to your wallet.')" class="w-full py-2.5 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl text-sm transition">
+                    ✅ Mark Completed (+10 Coins)
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

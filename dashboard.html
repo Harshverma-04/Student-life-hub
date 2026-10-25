@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Student Life Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: { 500: '#3b82f6', 600: '#2563eb' } } } } }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen">
+    <!-- Navbar -->
+    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-extrabold text-lg text-brand-600 dark:text-blue-400">Student Life Hub</a>
+            <div class="flex items-center space-x-4">
+                <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700"><i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline text-yellow-400"></i></button>
+                <a href="index.html" class="text-sm font-semibold text-red-600 hover:underline" data-en="Logout" data-hi="लॉग आउट">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Profile Header Card -->
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-6 sm:p-8 text-white shadow-xl mb-8">
+            <div class="flex flex-col sm:flex-row items-center gap-6">
+                <div class="w-24 h-24 rounded-full bg-white/20 border-4 border-white/30 flex items-center justify-center text-4xl font-bold">
+                    👨‍🎓
+                </div>
+                <div class="text-center sm:text-left flex-1">
+                    <h1 class="text-2xl sm:text-3xl font-bold">Rahul Kumar</h1>
+                    <p class="text-blue-100 text-sm mt-1">Polytechnic Diploma • Mechanical Engineering • 3rd Semester</p>
+                    <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-3">
+                        <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-semibold">🪙 145 Coins</span>
+                        <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-semibold">⭐ Level 4 Scholar</span>
+                        <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-semibold">🔥 7-Day Streak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <a href="notes.html" class="p-4 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition">
+                <i class="fa-solid fa-book text-2xl text-blue-600 mb-2"></i>
+                <h3 class="font-bold text-sm" data-en="Notes" data-hi="नोट्स">Notes</h3>
+            </a>
+            <a href="videos.html" class="p-4 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition">
+                <i class="fa-solid fa-video text-2xl text-red-600 mb-2"></i>
+                <h3 class="font-bold text-sm" data-en="Videos" data-hi="वीडियो">Videos</h3>
+            </a>
+            <a href="coins.html" class="p-4 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition">
+                <i class="fa-solid fa-coins text-2xl text-amber-500 mb-2"></i>
+                <h3 class="font-bold text-sm" data-en="Coin Wallet" data-hi="कॉइन वॉलेट">Coin Wallet</h3>
+            </a>
+            <a href="tools.html" class="p-4 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 text-center hover:shadow-md transition">
+                <i class="fa-solid fa-calculator text-2xl text-green-600 mb-2"></i>
+                <h3 class="font-bold text-sm" data-en="Tools" data-hi="टूल्स">Tools</h3>
+            </a>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm">
+            <h2 class="text-lg font-bold mb-4" data-en="Semester Study Progress" data-hi="सेमेस्टर पढ़ाई की प्रगति">Semester Study Progress</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-sm mb-1 font-medium">
+                        <span>Applied Mechanics</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between text-sm mb-1 font-medium">
+                        <span>Engineering Drawing</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 h-2.5 rounded-full overflow-hidden">
+                        <div class="bg-green-600 h-2.5 rounded-full" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
