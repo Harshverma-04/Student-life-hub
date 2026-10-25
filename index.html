@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Student Life Hub: study resources, practice quizzes, student tools, and career guidance for Polytechnic and ITI students.">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Student Life Hub — Study smarter, every day</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">SL</span><span>Student Life <b>Hub</b><small>POLY / ITI</small></span></a>
+  <button id="menuToggle" class="icon-btn" aria-label="Toggle menu">☰</button>
+  <nav id="nav">
+    <a href="#home">Home</a><a href="#notes">Notes & Study</a><a href="#tools">Student Tools</a><a href="#career">Career Corner</a>
+  </nav>
+  <div class="auth-actions">
+    <button id="signInBtn" class="btn btn-primary">Continue with Google</button>
+    <button id="signOutBtn" class="btn btn-quiet hidden">Sign out</button>
+  </div>
+</header>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">✦ YOUR STUDENT SPACE</span>
+      <h1>Namaste, Student! <span>✋</span><br><em>Apni padhai ko next level par le jao.</em></h1>
+      <p>Notes, practice quizzes aur useful student tools — sab ek hi jagah.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#notes">Explore study notes →</a><a class="btn btn-outline" href="#tools">Open student tools</a></div>
+      <p id="authStatus" class="status" role="status">Sign in with Google to save your learning progress.</p>
+    </div>
+    <div class="hero-card">
+      <div class="mini-top"><span>✦ TODAY'S FOCUS</span><span class="live-dot">● Ready</span></div>
+      <div class="progress-ring"><div><strong>01</strong><small>step at a time</small></div></div>
+      <h3>Study smarter, every day.</h3>
+      <p>Build a steady study habit with helpful resources and simple tools.</p>
+      <div class="mini-stats"><div><b id="notesCount">—</b><small>Published notes</small></div><div><b id="savedCount">0</b><small>Saved notes</small></div></div>
+    </div>
+  </section>
+
+  <section class="section" id="notes">
+    <div class="section-head"><div><span class="eyebrow">STUDY LIBRARY</span><h2>Notes & PDF resources</h2><p>Search published study material by course, semester or subject.</p></div></div>
+    <div class="filters">
+      <input id="searchInput" type="search" placeholder="Search notes, subject or branch…" aria-label="Search notes">
+      <select id="courseFilter" aria-label="Filter by course"><option value="">All courses</option><option>Polytechnic</option><option>ITI</option></select>
+      <select id="semesterFilter" aria-label="Filter by semester"><option value="">All semesters</option><option>Semester 1</option><option>Semester 2</option><option>Semester 3</option><option>Semester 4</option><option>Semester 5</option><option>Semester 6</option><option>Trade</option></select>
+    </div>
+    <div id="notesGrid" class="notes-grid"><div class="empty-state">Connecting to the study library…</div></div>
+    <p class="fine-print">Only materials you have permission to share should be uploaded. Always follow your institution’s and the document owner’s copyright rules.</p>
+  </section>
+
+  <section class="section tools-section" id="tools">
+    <div class="section-head"><div><span class="eyebrow">STUDENT TOOLS</span><h2>Small tools, useful every day</h2></div></div>
+    <div class="tool-grid">
+      <article class="tool-card"><div class="tool-icon">％</div><h3>Percentage calculator</h3><p>Calculate marks percentage.</p><label for="marksObtained">Marks obtained</label><input id="marksObtained" type="number" min="0" placeholder="e.g. 420"><label for="marksTotal">Total marks</label><input id="marksTotal" type="number" min="1" placeholder="e.g. 500"><button id="calcPercent" class="btn btn-primary">Calculate</button><p id="percentResult" class="result" aria-live="polite"></p></article>
+      <article class="tool-card"><div class="tool-icon">✓</div><h3>Attendance calculator</h3><p>Estimate your current attendance.</p><label for="classesAttended">Classes attended</label><input id="classesAttended" type="number" min="0" placeholder="e.g. 42"><label for="classesHeld">Total classes held</label><input id="classesHeld" type="number" min="1" placeholder="e.g. 50"><button id="calcAttendance" class="btn btn-primary">Calculate</button><p id="attendanceResult" class="result" aria-live="polite"></p></article>
+      <article class="tool-card"><div class="tool-icon">◷</div><h3>Focus timer</h3><p>Try a short focused study session.</p><div id="timerDisplay" class="timer-display">25:00</div><div class="timer-actions"><button id="timerStart" class="btn btn-primary">Start</button><button id="timerReset" class="btn btn-outline">Reset</button></div><p id="timerStatus" class="result" aria-live="polite"></p></article>
+    </div>
+  </section>
+
+  <section class="section career-section" id="career">
+    <div class="section-head"><div><span class="eyebrow">YOUR NEXT STEP</span><h2>Career Corner</h2><p>Use official sources to check eligibility, dates and application details.</p></div></div>
+    <div class="career-grid">
+      <a class="career-card" href="https://www.apprenticeshipindia.gov.in/" target="_blank" rel="noopener noreferrer"><span>↗</span><b>Apprenticeship India</b><small>Apprenticeship opportunities</small></a>
+      <a class="career-card" href="https://www.ncs.gov.in/" target="_blank" rel="noopener noreferrer"><span>↗</span><b>National Career Service</b><small>Career and employment services</small></a>
+      <a class="career-card" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer"><span>↗</span><b>National Scholarship Portal</b><small>Scholarship information</small></a>
+    </div>
+  </section>
+
+  <section id="adminSection" class="section admin-section hidden">
+    <div class="section-head"><div><span class="eyebrow">RESTRICTED AREA</span><h2>Admin panel</h2><p>Only the configured admin account can publish study PDFs.</p></div><span class="admin-badge">Admin access</span></div>
+    <form id="uploadForm" class="admin-form">
+      <div class="form-grid">
+        <div><label for="noteTitle">Title *</label><input id="noteTitle" maxlength="120" required placeholder="e.g. Basic Electrical Engineering Notes"></div>
+        <div><label for="noteCourse">Course *</label><select id="noteCourse" required><option value="Polytechnic">Polytechnic</option><option value="ITI">ITI</option></select></div>
+        <div><label for="noteSemester">Semester / level *</label><select id="noteSemester" required><option>Semester 1</option><option>Semester 2</option><option>Semester 3</option><option>Semester 4</option><option>Semester 5</option><option>Semester 6</option><option>Trade</option></select></div>
+        <div><label for="noteSubject">Subject / branch *</label><input id="noteSubject" maxlength="100" required placeholder="e.g. Electrical"></div>
+      </div>
+      <label for="noteDescription">Short description</label><textarea id="noteDescription" maxlength="500" rows="3" placeholder="What will students learn from this PDF?"></textarea>
+      <label for="noteFile">PDF file (max 10 MB) *</label><input id="noteFile" type="file" accept="application/pdf,.pdf" required>
+      <button id="uploadBtn" class="btn btn-primary" type="submit">Upload and publish PDF</button>
+      <p id="uploadStatus" class="status" role="status"></p>
+    </form>
+    <h3>Manage published notes</h3><div id="adminNotesList" class="admin-notes-list"></div>
+  </section>
+</main>
+<footer class="footer">
+  <a class="brand" href="#"><span class="brand-mark">SL</span><span>Student Life <b>Hub</b></span></a>
+  <div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+  <p>Made for learning. Verify important dates and rules with official sources.</p><small>© <span id="year"></span> Student Life Hub</small>
+</footer>
+</body>
+</html>
